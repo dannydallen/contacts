@@ -161,5 +161,10 @@ class ContactListViewController: UITableViewController, ContactListDisplayLogic
             deleteContact(contactID: contacts[indexPath.row].contactID)
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
+        super.viewWillAppear(animated)
+    }
 }
 
